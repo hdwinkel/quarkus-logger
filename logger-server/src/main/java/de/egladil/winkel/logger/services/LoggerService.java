@@ -2,6 +2,8 @@ package de.egladil.winkel.logger.services;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,14 +21,22 @@ public class LoggerService {
     
 
     @Inject
-    public LoggerService(LoggerRepository loggerRepo){
-       this.loggerRepo=loggerRepo;
-    }  
+    public LoggerService(final LoggerRepository loggerRepo) {
+        this.loggerRepo = loggerRepo;
+    }
 
-    public String createLoggerEntries(DeviceLoggerDHT dht) {
-    
-        LoggerEntry loggerEntryTemperature = new LoggerEntry(dht.getHeader().getTimestamp(), dht.getHeader().getDevice(), "temperature", dht.getBody().getTemperature());
-        LoggerEntry loggerEntryHumidity = new LoggerEntry(dht.getHeader().getTimestamp(), dht.getHeader().getDevice(), "humidity", dht.getBody().getHumidity());
+    @Inject
+    EntityManager em;
+
+    @Transactional
+    public String createLoggerEntries(final DeviceLoggerDHT dht) {
+
+        final LoggerEntry loggerEntryTemperature = new LoggerEntry(dht.getHeader().getTimestamp(),
+                dht.getHeader().getDevice(), "temperature", dht.getBody().getTemperature());
+        em.persist(loggerEntryTemperature);
+        final LoggerEntry loggerEntryHumidity = new LoggerEntry(dht.getHeader().getTimestamp(),
+                dht.getHeader().getDevice(), "humidity", dht.getBody().getHumidity());
+        em.persist(loggerEntryHumidity);
 
         this.loggerRepo.save(loggerEntryTemperature);
         this.loggerRepo.save(loggerEntryHumidity);

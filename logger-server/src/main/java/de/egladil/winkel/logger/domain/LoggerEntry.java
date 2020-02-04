@@ -4,12 +4,32 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Entity
 public class LoggerEntry implements Serializable {
 
+    /* serialVersionUID */
+	private static final long serialVersionUID = 1L;
+
+    @Id 
     String uuid;
+
+    @NotNull
     LocalDateTime loggingTime;
+
+    @NotNull
+	@Size(min = 1, max = 20)
     String loggingDevice;
+
+    @NotNull
+	@Size(min = 1, max = 20)
     String loggingType;
+
+    @NotNull
     Double loggingValue;
 
     public LoggerEntry(final LocalDateTime loggingTime, final String loggingDevice, final String loggingType,

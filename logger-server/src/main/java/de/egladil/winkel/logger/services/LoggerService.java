@@ -38,10 +38,10 @@ public class LoggerService {
                 dht.getHeader().getDevice(), "humidity", dht.getBody().getHumidity());
         em.persist(loggerEntryHumidity);
 
-        this.loggerRepo.save(loggerEntryTemperature);
-        this.loggerRepo.save(loggerEntryHumidity);
+        //this.loggerRepo.save(loggerEntryTemperature);
+        //this.loggerRepo.save(loggerEntryHumidity);
 
-        LOG.info("RepoSize:" + loggerRepo.all().size());
+        //LOG.info("RepoSize:" + loggerRepo.all().size());
 
         return "entries:\n" + loggerEntryTemperature + "\n" + loggerEntryHumidity;
     }

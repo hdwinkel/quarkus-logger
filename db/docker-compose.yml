@@ -20,5 +20,5 @@ services:
       # Where our data will be persisted
     volumes:
       - /mnt/docker/mariadb:/var/lib/mysql
-
+      - /mnt/docker/mariadb/init:/docker-entrypoint-initdb.d
 

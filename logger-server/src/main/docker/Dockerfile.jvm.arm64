@@ -31,4 +31,7 @@ EXPOSE 8080
 # run with user 1001
 #USER 1001
 
-ENTRYPOINT [ "/deployments/run-java.sh" ]
+#ENTRYPOINT [ "/deployments/run-java.sh" ]
+
+CMD ["java","-jar","/deployments/app.jar"]
+

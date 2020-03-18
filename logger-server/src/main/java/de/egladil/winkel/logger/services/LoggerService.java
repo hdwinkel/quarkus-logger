@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 
 import de.egladil.winkel.logger.dao.LoggerRepository;
 import de.egladil.winkel.logger.domain.DeviceLoggerDHT;
+import de.egladil.winkel.logger.domain.DeviceLoggerGeneric;
 import de.egladil.winkel.logger.domain.LoggerEntry;
 
 @ApplicationScoped
@@ -44,6 +45,21 @@ public class LoggerService {
         //LOG.info("RepoSize:" + loggerRepo.all().size());
 
         return "entries:\n" + loggerEntryTemperature + "\n" + loggerEntryHumidity;
+    }
+
+    @Transactional
+    public String createLoggerEntries(final DeviceLoggerGeneric generic) {
+
+        final LoggerEntry loggerEntryGeneric = new LoggerEntry(generic.getHeader().getTimestamp(),
+                generic.getHeader().getDevice(), generic.getBody().getMeasurement(), generic.getBody().getValue());
+        em.persist(loggerEntryGeneric);
+
+        //this.loggerRepo.save(loggerEntryTemperature);
+        //this.loggerRepo.save(loggerEntryHumidity);
+
+        //LOG.info("RepoSize:" + loggerRepo.all().size());
+
+        return "entries:\n" + loggerEntryGeneric;
     }
 
 

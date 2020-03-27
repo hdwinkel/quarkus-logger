@@ -33,10 +33,10 @@ public class LoggerService {
     public String createLoggerEntries(final DeviceLoggerDHT dht) {
 
         final LoggerEntry loggerEntryTemperature = new LoggerEntry(dht.getHeader().getTimestamp(),
-                dht.getHeader().getDevice(), "temperature", dht.getBody().getTemperature());
+                dht.getHeader().getDevice(), "temperature", dht.getBody().getTemperature(),"gradC");
         em.persist(loggerEntryTemperature);
         final LoggerEntry loggerEntryHumidity = new LoggerEntry(dht.getHeader().getTimestamp(),
-                dht.getHeader().getDevice(), "humidity", dht.getBody().getHumidity());
+                dht.getHeader().getDevice(), "humidity", dht.getBody().getHumidity(),"percent");
         em.persist(loggerEntryHumidity);
 
         //this.loggerRepo.save(loggerEntryTemperature);
@@ -51,7 +51,7 @@ public class LoggerService {
     public String createLoggerEntries(final DeviceLoggerGeneric generic) {
 
         final LoggerEntry loggerEntryGeneric = new LoggerEntry(generic.getHeader().getTimestamp(),
-                generic.getHeader().getDevice(), generic.getBody().getMeasurement(), generic.getBody().getValue());
+                generic.getHeader().getDevice(), generic.getBody().getMeasurement(), generic.getBody().getValue(), generic.getBody().getUnit());
         em.persist(loggerEntryGeneric);
 
         //this.loggerRepo.save(loggerEntryTemperature);

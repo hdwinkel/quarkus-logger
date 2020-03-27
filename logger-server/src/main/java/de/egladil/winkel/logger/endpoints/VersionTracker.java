@@ -11,6 +11,6 @@ public class VersionTracker {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return "v2";
+        return "v3";
     }
 }

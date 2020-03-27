@@ -6,7 +6,8 @@ import javax.json.bind.annotation.JsonbPropertyOrder;
 
 @JsonbPropertyOrder({
     "measurement",
-    "value"
+    "value",
+    "unit"
     })
 public class BodyGeneric {
 
@@ -14,8 +15,10 @@ public class BodyGeneric {
     private String measurement;
     @JsonbProperty("value")
     private Double value;
+    @JsonbProperty("unit")
+    private String unit;
 
-    @JsonbProperty("temperature")
+    @JsonbProperty("measurement")
     public String getMeasurement() {
         return measurement;
     }
@@ -35,6 +38,17 @@ public class BodyGeneric {
         this.value = value;
     }
 
+    @JsonbProperty("unit")
+    public String getUnit() {
+        return unit;
+    }
+
+    @JsonbProperty("unit")
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -42,6 +56,8 @@ public class BodyGeneric {
         builder.append(measurement);
         builder.append(":value=");
         builder.append(value);
+        builder.append(":unit=");
+        builder.append(unit);
         return builder.toString();
     }
 

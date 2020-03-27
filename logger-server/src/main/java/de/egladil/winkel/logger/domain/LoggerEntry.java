@@ -32,8 +32,12 @@ public class LoggerEntry implements Serializable {
     @NotNull
     Double loggingValue;
 
+    @NotNull
+    @Size(min =1, max = 20)
+    String loggingUnit;
+
     public LoggerEntry(final LocalDateTime loggingTime, final String loggingDevice, final String loggingType,
-            final Double loggingValue) {
+            final Double loggingValue, final String loggingUnit) {
 
         final String id = loggingTime + loggingDevice + loggingType;
         final String uuid = UUID.nameUUIDFromBytes(id.getBytes()).toString();
@@ -42,6 +46,7 @@ public class LoggerEntry implements Serializable {
         this.loggingDevice=loggingDevice;
         this.loggingType=loggingType;
         this.loggingValue=loggingValue;
+        this.loggingUnit=loggingUnit;
     } 
 
     public String getUuid() {
@@ -64,6 +69,10 @@ public class LoggerEntry implements Serializable {
         return loggingValue;
     }
 
+    public String getLoggingUnit() {
+        return loggingUnit;
+    }
+
     @Override
     public String toString() {
         return "LoggerEntry{" +
@@ -71,7 +80,8 @@ public class LoggerEntry implements Serializable {
                 ", time='" + loggingTime + '\'' +
                 ", device='" + loggingDevice + '\'' +
                 ", type='" + loggingType + '\'' +
-                ", value=" + loggingValue +
+                ", value=" + loggingValue + '\'' +
+                ", unit='" + loggingUnit + '\'' +
                 '}';
     }
     

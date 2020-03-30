@@ -17,6 +17,8 @@ public class BodyGeneric {
     private Double value;
     @JsonbProperty("unit")
     private String unit;
+    @JsonbProperty("aggr")
+    private Integer aggr;
 
     @JsonbProperty("measurement")
     public String getMeasurement() {
@@ -48,6 +50,15 @@ public class BodyGeneric {
         this.unit = unit;
     }
 
+    @JsonbProperty("aggr")
+    public Integer getAggr() {
+        return aggr;
+    }
+
+    @JsonbProperty("aggr")
+    public void setAggr(Integer aggr) {
+        this.aggr = aggr;
+    }
 
     @Override
     public String toString() {
@@ -58,6 +69,8 @@ public class BodyGeneric {
         builder.append(value);
         builder.append(":unit=");
         builder.append(unit);
+        builder.append(":aggr=");
+        builder.append(aggr);
         return builder.toString();
     }
 

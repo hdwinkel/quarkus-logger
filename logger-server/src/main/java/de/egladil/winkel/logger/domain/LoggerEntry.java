@@ -22,18 +22,18 @@ public class LoggerEntry implements Serializable {
     LocalDateTime loggingTime;
 
     @NotNull
-	@Size(min = 1, max = 20)
+	@Size(min = 1, max = 50)
     String loggingDevice;
 
     @NotNull
-	@Size(min = 1, max = 20)
+	@Size(min = 1, max = 50)
     String loggingType;
 
     @NotNull
     Double loggingValue;
 
     @NotNull
-    @Size(min =1, max = 20)
+    @Size(min =1, max = 50)
     String loggingUnit;
 
     public LoggerEntry(final LocalDateTime loggingTime, final String loggingDevice, final String loggingType,

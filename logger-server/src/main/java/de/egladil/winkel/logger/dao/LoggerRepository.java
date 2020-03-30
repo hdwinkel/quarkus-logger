@@ -11,14 +11,18 @@ import de.egladil.winkel.logger.domain.*;
 @ApplicationScoped
 public class LoggerRepository{
 
-    static Map<String, LoggerEntry> data = new ConcurrentHashMap<>();    public List<LoggerEntry> all() {
+    static Map<String, LoggerEntry> data = new ConcurrentHashMap<>();    
+    public List<LoggerEntry> all() {
         return new ArrayList<>(data.values());
-    }    public LoggerEntry getById(String id) {
+    }    
+    public LoggerEntry getById(String id) {
         return data.get(id);
-    }    public LoggerEntry save(LoggerEntry loggerEntry) {
+    }    
+    public LoggerEntry save(LoggerEntry loggerEntry) {
         data.put(loggerEntry.getUuid(), loggerEntry);
         return loggerEntry;
-    }    public void deleteById(String id) {
+    }    
+    public void deleteById(String id) {
         data.remove(id);
     }
 

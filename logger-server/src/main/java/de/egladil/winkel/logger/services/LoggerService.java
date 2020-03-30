@@ -53,16 +53,8 @@ public class LoggerService {
         final LoggerEntry loggerEntryGeneric = new LoggerEntry(generic.getHeader().getTimestamp(),
                 generic.getHeader().getDevice(), generic.getBody().getMeasurement(), generic.getBody().getValue(), generic.getBody().getUnit());
         em.persist(loggerEntryGeneric);
-
-        //this.loggerRepo.save(loggerEntryTemperature);
-        //this.loggerRepo.save(loggerEntryHumidity);
-
-        //LOG.info("RepoSize:" + loggerRepo.all().size());
-
         return "entries:\n" + loggerEntryGeneric;
     }
-
-
 
 }
 

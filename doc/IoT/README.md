@@ -12,16 +12,12 @@ For PoC purposes temperature/humidity logger is built on breadboards
 
 Later on these types of data could be used for some more time-series evaluations using ML, but this is outside of this investigations.
 
-## Let's start with the sensors
-The essential element in the IoT parts of the PoC is the ESP-8266
-It is used in two different scenarios:
-![The IoT side of the PoC](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/pictures/DL-IoT-overview.jpg "IoT side of PoC")
-1. ESP-8266-01 to collect data produced by a DHT-22 temperature/humidity sensor, flashed with a self written software (see code)
-2. ESP-8266-12 as an actor inside a WiFi power plug (I used an OBI with an ESP inside, flashed with the
-[Tasmota Firmware](https://github.com/arendst/Tasmota "Tasmota Git repository")
+In the IoT chapters you can find some detailed info about the three data providers:
 
-The procedure for the DHT-22 is quite common:
-1. connect the DHT sensor to the ESP on a breadboard
-2. use the Arduino Development software to flash the code
-There are some more professional soldered solutions but for the prototype it is 'good enough'
+* **[ESP8266-01 and DHT-22](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/IoT/SensorData.md "ESP8266-01 and DHT-22")**
+* **[Power Meter](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/IoT/PowerData.md "Power Meter")**
+* **[Solax SolarPanels](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/IoT/SolaxData.md "Solax SolarPanels")**
+
+
+
 

@@ -1,11 +1,14 @@
 # quarkus-logger
+
+![Übersicht POC](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/pictures/DL-overview-poc.jpg "PoC")
+
 This repo shall host all activities to create a quarkus based IoT logging landscape
 It consist of some different parts:
 * Some IoT DHT sensors connected with an ESP8266 to a logging controller
 * A Logging controller realized in MQTT and NodeRed 
 (installed in a Docker environment on a Raspberry Pi)
 * A Raspberry Pi Cluster based on an arm64 Ubuntu running a Kubernetes Cluster K3S,
-hosting a Quarkus application 
+hosting a Quarkus application
 * A MariaDB database installed in a Docker container on a Raspberry Pi
 * Prometheus and Grafana installed in a Docker container on a Raspberry Pi
 

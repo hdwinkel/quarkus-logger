@@ -45,17 +45,21 @@ The first approach was to define a generic Header/Body structure as Payload in a
 #####Request
 
 POST:
-`http://192.168.10.106:1880/TempHum`
-`Request Header:`
-`Content-Type: application/json`
+```
+http://192.168.10.106:1880/TempHum
+Request Header:
+Content-Type: application/json
+```
 Remark: This is a request to a controller (in my case a Node Red) middleware to further extend.
 
 #####Payload
-`{`
-`    "Header": { "Timestamp": "2019-12-30T15:51:28.494652", "Device": "DHTL-01"},`
-`     "Body": {"temperature":27.50,"humidity":35.70}`
-`}`
-`
+```
+{
+    "Header": { "Timestamp": "2019-12-30T15:51:28.494652", "Device": "DHTL-01"},
+     "Body": {"temperature":27.50,"humidity":35.70}
+}
+```
+
 This payload structure is generic according a timestamp and a device. I decided not to specify some different types of device in the beginning just to able to start and learn.
 But there is a fundamental problem with this format:
 It is bound to a specific sensor and must be changed if there is another device with other measurements.
@@ -66,16 +70,19 @@ The second approach was to define a generic Header/Body structure as Payload in 
 #####Request
 
 POST:
-`http://192.168.10.107:58080/logger/generic`
-`Request Header:`
-`Content-Type: application/json`
+```
+http://192.168.10.107:58080/logger/generic
+Request Header:
+Content-Type: application/json
+```
 Remark: This is a request to cluster, responsible for saving the data in a database
 #####Payload
-`{`
-`    "Header": { "Timestamp": "2020-02-16T22:40:00.000000", "Device": "DHTL-T"},`
-`     "Body": {"measurement":"temperature", "value":22.50, "unit":"gradC", "aggr":0}`
-`}`
-`
+```
+{
+    "Header": { "Timestamp": "2020-02-16T22:40:00.000000", "Device": "DHTL-T"},
+     "Body": {"measurement":"temperature", "value":22.50, "unit":"gradC", "aggr":0}
+}
+```
 This structure is more generic and could be applied for other types of sensors.
 the meaning:
 * measurement: is the measurement to collect, e.g. temperature or humidity or pressure

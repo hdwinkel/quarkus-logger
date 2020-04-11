@@ -42,7 +42,7 @@ The request should be in line with the REST-JSON patterns and should be able to 
 #### First approach: A specific call for a DHT device
 The first approach was to define a generic Header/Body structure as Payload in a JSON call
 
-#####Request
+##### Request
 
 POST:
 ```
@@ -52,7 +52,7 @@ Content-Type: application/json
 ```
 Remark: This is a request to a controller (in my case a Node Red) middleware to further extend.
 
-#####Payload
+##### Payload
 ```
 {
     "Header": { "Timestamp": "2019-12-30T15:51:28.494652", "Device": "DHTL-01"},
@@ -67,7 +67,7 @@ It is bound to a specific sensor and must be changed if there is another device 
 #### Second approach: A generic call for a single measurement of a device
 The second approach was to define a generic Header/Body structure as Payload in a JSON call as well but with a generic Body part (device agnostic)
 
-#####Request
+##### Request
 
 POST:
 ```
@@ -76,7 +76,7 @@ Request Header:
 Content-Type: application/json
 ```
 Remark: This is a request to cluster, responsible for saving the data in a database
-#####Payload
+##### Payload
 ```
 {
     "Header": { "Timestamp": "2020-02-16T22:40:00.000000", "Device": "DHTL-T"},

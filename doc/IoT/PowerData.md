@@ -7,6 +7,7 @@ The transmission protocol is defined and can be read with an IR reader e.g. with
 [Emlog Reader](https://https://shop.weidmann-elektronik.de/media/files_public/9d73b590bf0752a5beff32d229d4497d/HowToRaspberryPi.pdf "Emlog Reader")
 
 Applied it looks like this:
+
 ![Emlog Reader applied](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/pictures/DL-Power.jpg "Emlog Reader applied")
 
 the **Python** code for initializing the serial interface could look like:

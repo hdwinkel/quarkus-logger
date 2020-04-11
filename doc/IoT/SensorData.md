@@ -8,10 +8,11 @@ It is used in two different scenarios:
 2. ESP-8266-12 as an actor inside a WiFi power plug (I used an OBI with an ESP inside, flashed with the
 [Tasmota Firmware](https://github.com/arendst/Tasmota "Tasmota Git repository")
 
-####The procedure for the **DHT-22** is quite common:
+#### The procedure for the **DHT-22** is quite common:
 1. connect the DHT sensor to the ESP on a breadboard
 2. use the Arduino Development software to flash the code
 There are some more professional soldered solutions but for the prototype it is 'good enough'
+
 ![The DHT-22 sensor plugged to the ESP8266-01](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/pictures/DL-Sensor.jpg "The DHT-22 sensor plugged to the ESP8266-01")
 
 There are a lot of examples how to use the DHT-22
@@ -26,7 +27,7 @@ The sensor data of the Temperature and Humidity data from DHT22 can be made visi
 
 ![Grafana Sensor Data](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/pictures/DL-Grafana-Sensor-Values.jpg "Grafana Sensor Data")
 
-####The power plug OBI
+#### The power plug OBI
 There are some different cheap WiFi controlled power plugs on the market. Mostly all of them have the problem to call in to a Chines web server what for privacy reasons isn't a good idea.
 A better solution is the option to flash the Tasmota software on the embedded ESP8266-12.
 The procedure isn't so common but described in different tutorials e.g.

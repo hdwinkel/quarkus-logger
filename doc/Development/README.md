@@ -118,11 +118,11 @@ The advantage of this solution is to have the complete build environment on one 
 
 ![PoC Development Flow](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/pictures/DL-software-stack.jpg "PoC Development Flow")
 
-#####1) Development
+##### 1) Development
 The build and unit tests are done in VSC on XUbuntu in VMWare
 The resulting code is commited and pushed to GitHub
 
-#####2) Integration test, packaging and staging
+##### 2) Integration test, packaging and staging
 The integration tests are done in the emulated Raspi by **Jenkins**
 The code is finally build, integration tested and packaged
 As a final step the package will be included in a Docker image and been tagged
@@ -204,7 +204,7 @@ pipeline {
 }
 ```
 
-#####3) Staging
+##### 3) Staging
 The builded Docker image, representing the Quarkus App, will be tagged and published to DockerHub (in this case **v4**)
 
 ```
@@ -220,7 +220,7 @@ docker push hdwinkel/logger-server-jvm-arm64:v4
 
 ```
 
-#####4) Deployment
+##### 4) Deployment
 On the Kubernetes master the deployment has to be updated (**v4**)
 after this it can be deployed
 ```

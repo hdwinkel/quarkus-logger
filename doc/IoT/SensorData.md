@@ -20,6 +20,10 @@ e.g.
 The practical tests with 5 different similar sensors over some weeks showed that the reliability and stability isn't really good. There were significant differences in the sensor as well in the ESP8266 quality.
 One of the root causes is definetely the power supply - the best values showed some regulated ones. For the voltage regulation it is a good idea to use step-down modules.
 
+The sensor data of the Temperature and Humidity data from DHT22 can be made visible with a **Grafana** dashboard:
+
+![Grafana Sensor Data](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/pictures/DL-Grafana-Sensor-Values.jpg "Grafana Sensor Data")
+
 ####The power plug OBI
 There are some different cheap WiFi controlled power plugs on the market. Mostly all of them have the problem to call in to a Chines web server what for privacy reasons isn't a good idea.
 A better solution is the option to flash the Tasmota software on the embedded ESP8266-12.
@@ -28,3 +32,6 @@ The procedure isn't so common but described in different tutorials e.g.
 
 The result of soldered pins could look like:
 ![OBI with ESP8266](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/pictures/DL-OBI.jpg "OBI with ESP8266")
+
+
+

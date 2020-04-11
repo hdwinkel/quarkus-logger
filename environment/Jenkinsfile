@@ -1,0 +1,72 @@
+pipeline {
+    agent { label 'arm64' }
+    environment { 
+        QUARKUS_DATASOURCE_URL = 'jdbc:mysql://192.168.10.107:3306/logger1'
+    }
+    tools {
+        maven 'Maven 3.6.0 QEMU-Raspi'
+    }
+    stages {
+        stage("Checkout") {
+            steps {
+                //git branch: 'develop', url: 'https://github.com/hdwinkel/quarkus-logger.git'
+                checkout([$class: 'GitSCM',
+                branches: [[name: 'origin/develop']],
+                extensions: [[$class: 'WipeWorkspace']],
+                userRemoteConfigs: [[url: 'https://github.com/hdwinkel/quarkus-logger.git']]
+                ])
+            }
+        }
+        stage("Compile") {
+            steps {
+                dir("logger-server") {
+                    sh "pwd"
+                    sh "mvn compile"
+                }
+            }
+        }
+        stage("Unit test") {
+            steps {
+                dir("logger-server") {
+                    sh "pwd"
+                    sh "mvn test"
+                }
+            }
+        }
+        stage("Package") {
+            steps {
+                dir("logger-server") {
+                    sh "pwd"
+                    sh "mvn package -DskipTests"
+                }
+            }
+        }
+        stage ('Docker image build'){
+            steps {
+                echo 'Building docker image'
+                dir("logger-server") {
+                    sh "pwd"
+                    sh 'docker build -f src/main/docker/Dockerfile.jvm.arm64 -t quarkus/logger-server-jvm .'
+                }
+            }       
+        }
+    }
+    post {
+        always {
+            echo 'This will always run'
+        }
+        success {
+            echo 'This will run only if successful'
+        }
+        failure {
+            echo 'This will run only if failed'
+        }
+        unstable {
+            echo 'This will run only if the run was marked as unstable'
+        }
+        changed {
+            echo 'This will run only if the state of the Pipeline has changed'
+            echo 'For example, if the Pipeline was previously failing but is now successful'
+        }
+    }
+}

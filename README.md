@@ -19,7 +19,7 @@ It is a project for self-learning different aspects of modern development:
 * Understanding modern IT Architectures including Microservices and Kubernetes Clusters
 * How to manage modern development processes including CI/CD, DevOps
 
-####Content:
+#### Content:
 
 [IoT and Data Aspects](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/IoT/README.md "IoT and Data Aspects") The IoT side of the PoC (Producing/Consuming Sensor and other data from SmartHome)
 
@@ -27,7 +27,7 @@ It is a project for self-learning different aspects of modern development:
 
 [Development Aspects](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/Development/README.md "Development Aspects") The Development aspects including CI/CD
 
-####Complexity:
+#### Complexity:
 
 ![PoC Development](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/pictures/DL-development.jpg "PoC Development")
 

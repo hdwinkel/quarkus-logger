@@ -19,6 +19,19 @@ It is a project for self-learning different aspects of modern development:
 * Understanding modern IT Architectures including Microservices and Kubernetes Clusters
 * How to manage modern development processes including CI/CD, DevOps
 
+####Content:
+
+[IoT and Data Aspects](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/IoT/README.md "IoT and Data Aspects") The IoT side of the PoC (Producing/Consuming Sensor and other data from SmartHome)
+
+[Architecture, Quarkus, Kubernetes](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/Architecture/README.md "Architecture, Quarkus, Kubernetes") The Architecture with a Controller and a Rapberry Cluster hosting Docker and Kubernetes and running Middleware and a MicroService application (Quarkus-App)
+
+[Development Aspects](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/Development/README.md "Development Aspects") The Development aspects including CI/CD
+
+####Complexity:
+
+![PoC Development](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/pictures/DL-development.jpg "PoC Development")
+
+
 ## What isn't it?
 The repo is NOT a ready to use package for production e.g. at home.
 The ideas are still valid and the full sceanarios runs but the code quality isn't expected as world class, just to understand the scenarios.

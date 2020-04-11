@@ -1,0 +1,2 @@
+
+docker-compose exec db mysql -uroot -p -e 'SHOW DATABASES;'

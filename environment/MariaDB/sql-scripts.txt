@@ -1,0 +1,2 @@
+select * from LoggerEntry where loggingDevice='EBZ' order by loggingTime desc limit 500
+

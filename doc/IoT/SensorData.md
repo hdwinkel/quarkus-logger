@@ -1,7 +1,9 @@
 ## Let's start with the sensors
 The essential element in the IoT parts of the PoC is the ESP-8266
 It is used in two different scenarios:
+
 ![The IoT side of the PoC](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/pictures/DL-IoT-overview.jpg "IoT side of PoC")
+
 1. ESP-8266-01 to collect data produced by a DHT-22 temperature/humidity sensor, flashed with a self written software (see code)
 2. ESP-8266-12 as an actor inside a WiFi power plug (I used an OBI with an ESP inside, flashed with the
 [Tasmota Firmware](https://github.com/arendst/Tasmota "Tasmota Git repository")
@@ -31,6 +33,7 @@ The procedure isn't so common but described in different tutorials e.g.
 [OBI and Tasmota](https://joergnapp.de/sonoff-tasmota-obi-steckdose-flashen-ohne-loetarbeiten/ "OBI and Tasmota")
 
 The result of soldered pins could look like:
+
 ![OBI with ESP8266](https://github.com/hdwinkel/quarkus-logger/blob/develop/doc/pictures/DL-OBI.jpg "OBI with ESP8266")
 
 

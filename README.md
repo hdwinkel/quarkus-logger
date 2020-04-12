@@ -66,6 +66,6 @@ For questions around the scenarios and technologies you can contact me of course
 winkel[at]egladil.de
 
 **Disclaimer:**
-If I have used some foreign material I mention the sources with links. If I have something forgotten, give me a hint please to make some corrections.
+If I have made some mistakes or have I violated copyright notices, please let me know so that I can correct it.
 
 

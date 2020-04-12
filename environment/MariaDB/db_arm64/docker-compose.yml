@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+
+  MariaDB:
+    restart: always
+    image: arm64v8/mariadb:latest
+    container_name: myMariaDB
+    ports:
+      - 3306:3306
+    environment:
+      - DEBUG=false
+      - MYSQL_ROOT_PASSWORD=data!root
+      - MYSQL_USER=logger
+      - MYSQL_PASSWORD=data!logger
+      - MYSQL_DATABASE=logger
+    volumes:
+      - "/mnt/docker/mariadb:/var/lib/mysql"

@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+
+  prometheus:
+    image: prom/prometheus
+    restart: unless-stopped
+    container_name: myPrometheus
+    networks:
+      - default
+    volumes:
+      - /mnt/extusb/docker/prometheus/etc/:/etc/prometheus/
+      - /mnt/extusb/docker/prometheus/data/:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    ports:
+      - 9090:9090
+
+  grafana:
+    image: grafana/grafana
+    restart: unless-stopped
+    container_name: myGrafana
+    depends_on:
+      - prometheus
+    networks:
+      - default
+    ports:
+      - 3000:3000
+    volumes:
+      - /mnt/extusb/docker/grafana/data/:/var/lib/grafana
+    env_file:
+      - config.monitoring
+      

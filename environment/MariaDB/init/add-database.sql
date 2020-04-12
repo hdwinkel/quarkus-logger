@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS logger1;
+GRANT ALL PRIVILEGES ON logger1.* TO 'logger'@'%';

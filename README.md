@@ -44,7 +44,7 @@ Container Orchestration | Kubernetes
 CI/CD | Jenkins
 Database | MariaDB
 Database GUI | Heidi-SQL
-Monitoring | Poseidon
+Monitoring | Prometheus
 Dashboards | Grafana
 Message Orchestration | Node Red
 Message Broker MQTT | Mosqitto
